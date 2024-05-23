@@ -10,7 +10,35 @@ This dashboard was created using [Dash](https://github.com/plotly/dash), a Pytho
 
 **Recession Period Statistics:** Analyze automobile sales performance during recession periods and their correlation with factors like unemployment rate and advertising expenditure.
 
-## Running the app
+## Deploying the app on PythonAnywhere
+
+After creating an account on PythonAnywhere, you need to do the steps below to deploy the app.
+
+- Upload your files from **Files** tab.
+- Create a Bash console
+- Create a virtualenv by following [this page](https://help.pythonanywhere.com/pages/Virtualenvs) and run `pip install -r requirements.txt` into it
+- Create a new custom webapp on PythonAnywhere
+- Configure your webapp to use your **Source code** (main.py), **Working directory**, and **virtualenv** on the PythonAnywhere webapp dashboard
+- Edit your **WSGI configuration file** (wsgi.py) as in the example below, and make sure it can find and import your app.
+
+    ```
+    import sys
+
+    # add your project directory to the sys.path
+    project_home = u'/home/itibaraydemiruslu'
+    if project_home not in sys.path:
+        sys.path = [project_home] + sys.path
+
+    # need to pass the flask app as "application" for WSGI to work
+    # for a dash app, that is at app.server
+    # see https://plot.ly/dash/deployment
+    from main import app
+    application = app.server
+    ```
+- Reload your webapp and go to your webapp url!
+
+
+## Running the app locally
 
 1. Install the required packages by running:
     ```
