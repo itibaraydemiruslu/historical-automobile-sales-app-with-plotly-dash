@@ -4,6 +4,8 @@ This dashboard is created as a part of the IBM Data Analyst Certification progra
 
 This dashboard was created using [Dash](https://github.com/plotly/dash), a Python framework for building analytical web applications. Graphs are generated using [Plotly Express](https://plotly.com/python/plotly-express/), a high-level interface to Plotly for easy creation of interactive visualizations. [Pandas](https://github.com/pandas-dev/pandas) has also been used to load CSV file into a dataframe and access the data.
 
+You can access the live demo from https://itibaraydemiruslu.pythonanywhere.com/
+
 ## Features
 
 **Yearly Statistics:** View trends in automobile sales, advertising expenditure, and other relevant metrics for individual years. 
